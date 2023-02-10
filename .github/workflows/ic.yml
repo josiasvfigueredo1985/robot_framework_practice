@@ -1,14 +1,45 @@
-name: End-to-end tests 🧪
+name: Robot Framework
+
 on: [push]
+
 jobs:
-  robot_test:
+  test:
     runs-on: ubuntu-latest
-    name: Run Robot Framework Tests
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Robot Framework
+    - uses: actions/checkout@v2
+    - name: Execute tests
       uses: joonvena/robotframework-docker-action@v1.0
+      env:
+        BROWSER: chrome
+        ROBOT_TESTS_DIR: Google_Search/Tests/
+        ROBOT_REPORTS_DIR: results
+    - name: Upload test results
+      uses: actions/upload-artifact@v1
+      if: always()
       with:
-        robot_tests_dir: Google_Search/Tests/
-        robot_options: pip install -r requirements.txt
+        name: reports
+        path: results
+
+  generate_report:
+    if: always()
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download reports
+      uses: actions/download-artifact@v1
+      with:
+        name: reports
+    - name: Get Repository Owner & Name
+      run: |
+        export OWNER="$(echo "${{ github.repository }}" | awk -F / '{print $1}' | sed -e "s/:refs//")"
+        export REPO="$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")"
+        echo "::set-env name=REPOSITORY_OWNER::$OWNER"
+        echo "::set-env name=REPOSITORY_NAME::$REPO"
+    - name: Send report to commit
+      uses: joonvena/robotframework-reporter-action@v0.1
+      env:
+        GH_ACCESS_TOKEN: ${{ secrets.TOKEN }}
+        REPO_OWNER: ${{ env.REPOSITORY_OWNER }}
+        COMMIT_SHA: ${{ github.sha }}
+        REPOSITORY: ${{ env.REPOSITORY_NAME }}
+        REPORT_PATH: reports
