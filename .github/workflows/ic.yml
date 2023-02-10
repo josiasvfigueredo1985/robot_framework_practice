@@ -1,9 +1,7 @@
-name: Robot Framework
-
+name: Robot Framework Practices
 on:
   push:
     branches: [master]
-
 jobs:
   test:
     runs-on: ubuntu-latest
