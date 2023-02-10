@@ -11,6 +11,7 @@ jobs:
       uses: actions/upload-artifact@v1
       if: always()
       with:
+        robot_tests_dir: ./Tests/
         name: reports
         path: reports
 
