@@ -1,13 +1,30 @@
 name: End-to-end tests 🧪
 on: [push]
 jobs:
-  robot_test:
+  test:
     runs-on: ubuntu-latest
-    name: Run Robot Framework Tests
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Robot Framework
+    - uses: actions/checkout@v2
+    - name: Execute tests
       uses: joonvena/robotframework-docker-action@v1.0
+    - name: Upload test results
+      uses: actions/upload-artifact@v1
+      if: always()
       with:
-        robot_tests_dir: ./Tests/
+        name: reports
+        path: reports
+
+  generate_report:
+    if: always()
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download reports
+      uses: actions/download-artifact@v1
+      with:
+        name: reports
+    - name: Send report to commit
+      uses: joonvena/robotframework-reporter-action@v2.1
+      with:
+        gh_access_token: ${{ secrets.GITHUB_TOKEN }}
