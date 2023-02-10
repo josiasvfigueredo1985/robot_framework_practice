@@ -1,3 +1,5 @@
+name: End-to-end tests - Robot Framework 🧪
+on: [push]
 robot_test:
   runs-on: ubuntu-latest
   name: Run Robot Framework Tests
