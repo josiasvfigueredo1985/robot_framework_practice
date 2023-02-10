@@ -1,44 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.4 on win32)" generated="20230128 15:44:12.968" rpa="false" schemaversion="3">
-<suite id="s1" name="Cadastro Teste" source="C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\cadastro_teste (2)\cadastro_teste">
-<suite id="s1-s1" name="Google Search" source="C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\cadastro_teste (2)\cadastro_teste\Google_Search">
-<suite id="s1-s1-s1" name="Tests" source="C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\cadastro_teste (2)\cadastro_teste\Google_Search\Tests">
-<suite id="s1-s1-s1-s1" name="Test For Loop" source="C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\cadastro_teste (2)\cadastro_teste\Google_Search\Tests\test_for_loop.robot">
-<test id="s1-s1-s1-s1-t1" name="Search images on Google" line="11">
+<robot generator="Robot 6.0.2 (Python 3.10.4 on win32)" generated="20230210 13:19:26.272" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Framework Practice" source="C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\robot_framework_practice">
+<suite id="s1-s1" name="Google Search" source="C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\robot_framework_practice\Google_Search">
+<suite id="s1-s1-s1" name="Tests" source="C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\robot_framework_practice\Google_Search\Tests">
+<suite id="s1-s1-s1-s1" name="Test Datadriven" source="C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\robot_framework_practice\Google_Search\Tests\test_datadriven.robot">
+<test id="s1-s1-s1-s1-t1" name="Search on Google" line="12">
 <kw name="Open Google" library="test_base" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${base_url}</arg>
 <arg>browser=${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230128 15:44:13.849" level="INFO">Opening browser 'chrome' to base url 'https://google.com'.</msg>
-<status status="PASS" starttime="20230128 15:44:13.848" endtime="20230128 15:44:18.396"/>
+<msg timestamp="20230210 13:19:26.672" level="INFO">Opening browser 'chrome' to base url 'https://google.com'.</msg>
+<status status="PASS" starttime="20230210 13:19:26.671" endtime="20230210 13:19:31.229"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230128 15:44:18.397" endtime="20230128 15:44:18.514"/>
+<status status="PASS" starttime="20230210 13:19:31.229" endtime="20230210 13:19:31.354"/>
 </kw>
-<status status="PASS" starttime="20230128 15:44:13.847" endtime="20230128 15:44:18.514"/>
+<status status="PASS" starttime="20230210 13:19:26.671" endtime="20230210 13:19:31.354"/>
 </kw>
-<for flavor="IN">
-<var>${term}</var>
-<value>@{terms}</value>
-<iter>
-<var name="${term}">Porsche Panamera</var>
+<kw name="Search for a term">
+<arg> Top 10 programming languages 2022</arg>
 <kw name="Fill the search input" library="steps">
 <arg>${term}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${search_field}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230128 15:44:18.515" endtime="20230128 15:44:18.561"/>
+<status status="PASS" starttime="20230210 13:19:31.356" endtime="20230210 13:19:31.405"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${search_field}</arg>
 <arg>${term}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230128 15:44:18.562" level="INFO">Typing text 'Porsche Panamera' into text field 'xpath://*[@name = 'q']'.</msg>
-<status status="PASS" starttime="20230128 15:44:18.561" endtime="20230128 15:44:18.660"/>
+<msg timestamp="20230210 13:19:31.406" level="INFO">Typing text ' Top 10 programming languages 2022' into text field 'xpath://*[@name = 'q']'.</msg>
+<status status="PASS" starttime="20230210 13:19:31.406" endtime="20230210 13:19:31.567"/>
 </kw>
-<status status="PASS" starttime="20230128 15:44:18.515" endtime="20230128 15:44:18.660"/>
+<status status="PASS" starttime="20230210 13:19:31.355" endtime="20230210 13:19:31.568"/>
 </kw>
 <kw name="Submit the search" library="steps">
 <kw name="Run Keyword And Return Status" library="BuiltIn">
@@ -49,106 +46,11 @@
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${search_field}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230128 15:44:18.678" level="INFO">Element 'xpath://*[@name = 'q']' is displayed.</msg>
-<status status="PASS" starttime="20230128 15:44:18.663" endtime="20230128 15:44:18.678"/>
+<msg timestamp="20230210 13:19:31.590" level="INFO">Element 'xpath://*[@name = 'q']' is displayed.</msg>
+<status status="PASS" starttime="20230210 13:19:31.570" endtime="20230210 13:19:31.590"/>
 </kw>
-<msg timestamp="20230128 15:44:18.679" level="INFO">${IsElementVisible} = True</msg>
-<status status="PASS" starttime="20230128 15:44:18.661" endtime="20230128 15:44:18.679"/>
-</kw>
-<if>
-<branch type="IF" condition="${IsElementVisible}">
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${search_field}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230128 15:44:18.681" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@name = 'q'] element.</msg>
-<msg timestamp="20230128 15:44:18.976" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230128 15:44:18.977" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230128 15:44:18.680" endtime="20230128 15:44:21.914"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:18.679" endtime="20230128 15:44:21.914"/>
-</branch>
-<status status="PASS" starttime="20230128 15:44:18.679" endtime="20230128 15:44:21.915"/>
-</if>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${search}</var>
-<arg>${filled_search}</arg>
-<arg>attribute=value</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20230128 15:44:21.940" level="INFO">${search} = Porsche Panamera</msg>
-<status status="PASS" starttime="20230128 15:44:21.915" endtime="20230128 15:44:21.940"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./Google_Search/${TEST NAME}_${search}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230128 15:44:22.048" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Google_Search/Search%20images%20on%20Google_Porsche%20Panamera.png"&gt;&lt;img src="Google_Search/Search%20images%20on%20Google_Porsche%20Panamera.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230128 15:44:21.942" endtime="20230128 15:44:22.050"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:18.661" endtime="20230128 15:44:22.050"/>
-</kw>
-<kw name="Select image search" library="steps">
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${IsElementVisible}</var>
-<arg>Element Should Be Visible</arg>
-<arg>${image_search}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${image_search}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230128 15:44:22.070" level="INFO">Element '//*[@id = "hdtb-msb"]/div[1]/div/div[2]/a' is displayed.</msg>
-<status status="PASS" starttime="20230128 15:44:22.050" endtime="20230128 15:44:22.070"/>
-</kw>
-<msg timestamp="20230128 15:44:22.072" level="INFO">${IsElementVisible} = True</msg>
-<status status="PASS" starttime="20230128 15:44:22.050" endtime="20230128 15:44:22.072"/>
-</kw>
-<if>
-<branch type="IF" condition="${IsElementVisible}">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath:${image_search}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230128 15:44:22.073" level="INFO">Clicking element 'xpath://*[@id = "hdtb-msb"]/div[1]/div/div[2]/a'.</msg>
-<status status="PASS" starttime="20230128 15:44:22.073" endtime="20230128 15:44:23.879"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:22.072" endtime="20230128 15:44:23.880"/>
-</branch>
-<status status="PASS" starttime="20230128 15:44:22.072" endtime="20230128 15:44:23.880"/>
-</if>
-<status status="PASS" starttime="20230128 15:44:22.050" endtime="20230128 15:44:23.880"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:18.515" endtime="20230128 15:44:23.880"/>
-</iter>
-<iter>
-<var name="${term}">Lamborghini Veneno</var>
-<kw name="Fill the search input" library="steps">
-<arg>${term}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${search_field}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230128 15:44:23.881" endtime="20230128 15:44:23.900"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${search_field}</arg>
-<arg>${term}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230128 15:44:23.901" level="INFO">Typing text 'Lamborghini Veneno' into text field 'xpath://*[@name = 'q']'.</msg>
-<status status="PASS" starttime="20230128 15:44:23.901" endtime="20230128 15:44:24.030"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:23.880" endtime="20230128 15:44:24.030"/>
-</kw>
-<kw name="Submit the search" library="steps">
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${IsElementVisible}</var>
-<arg>Element Should Be Visible</arg>
-<arg>${search_field}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${search_field}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230128 15:44:24.046" level="INFO">Element 'xpath://*[@name = 'q']' is displayed.</msg>
-<status status="PASS" starttime="20230128 15:44:24.032" endtime="20230128 15:44:24.047"/>
-</kw>
-<msg timestamp="20230128 15:44:24.047" level="INFO">${IsElementVisible} = True</msg>
-<status status="PASS" starttime="20230128 15:44:24.031" endtime="20230128 15:44:24.047"/>
+<msg timestamp="20230210 13:19:31.591" level="INFO">${IsElementVisible} = True</msg>
+<status status="PASS" starttime="20230210 13:19:31.569" endtime="20230210 13:19:31.592"/>
 </kw>
 <if>
 <branch type="IF" condition="${IsElementVisible}">
@@ -156,195 +58,155 @@
 <arg>${search_field}</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230128 15:44:24.049" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@name = 'q'] element.</msg>
-<msg timestamp="20230128 15:44:24.330" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230128 15:44:24.330" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230128 15:44:24.048" endtime="20230128 15:44:25.594"/>
+<msg timestamp="20230210 13:19:31.594" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@name = 'q'] element.</msg>
+<msg timestamp="20230210 13:19:31.879" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20230210 13:19:31.880" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230210 13:19:31.593" endtime="20230210 13:19:34.211"/>
 </kw>
-<status status="PASS" starttime="20230128 15:44:24.048" endtime="20230128 15:44:25.595"/>
+<status status="PASS" starttime="20230210 13:19:31.592" endtime="20230210 13:19:34.211"/>
 </branch>
-<status status="PASS" starttime="20230128 15:44:24.048" endtime="20230128 15:44:25.595"/>
+<status status="PASS" starttime="20230210 13:19:31.592" endtime="20230210 13:19:34.211"/>
 </if>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <var>${search}</var>
 <arg>${filled_search}</arg>
 <arg>attribute=value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20230128 15:44:25.615" level="INFO">${search} = Lamborghini Veneno</msg>
-<status status="PASS" starttime="20230128 15:44:25.595" endtime="20230128 15:44:25.616"/>
+<msg timestamp="20230210 13:19:34.239" level="INFO">${search} = Top 10 programming languages 2022</msg>
+<status status="PASS" starttime="20230210 13:19:34.214" endtime="20230210 13:19:34.239"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>./Google_Search/${TEST NAME}_${search}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230128 15:44:25.850" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Google_Search/Search%20images%20on%20Google_Lamborghini%20Veneno.png"&gt;&lt;img src="Google_Search/Search%20images%20on%20Google_Lamborghini%20Veneno.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230128 15:44:25.616" endtime="20230128 15:44:25.851"/>
+<msg timestamp="20230210 13:19:34.331" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Google_Search/Search%20on%20Google_Top%2010%20programming%20languages%202022.png"&gt;&lt;img src="Google_Search/Search%20on%20Google_Top%2010%20programming%20languages%202022.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230210 13:19:34.239" endtime="20230210 13:19:34.331"/>
 </kw>
-<status status="PASS" starttime="20230128 15:44:24.031" endtime="20230128 15:44:25.851"/>
+<status status="PASS" starttime="20230210 13:19:31.568" endtime="20230210 13:19:34.331"/>
 </kw>
-<kw name="Select image search" library="steps">
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${IsElementVisible}</var>
-<arg>Element Should Be Visible</arg>
-<arg>${image_search}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${image_search}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230128 15:44:26.089" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230128 15:44:26.090" level="FAIL">Element with locator '//*[@id = "hdtb-msb"]/div[1]/div/div[2]/a' not found.</msg>
-<status status="FAIL" starttime="20230128 15:44:25.854" endtime="20230128 15:44:26.114"/>
+<status status="PASS" starttime="20230210 13:19:31.355" endtime="20230210 13:19:34.331"/>
 </kw>
-<msg timestamp="20230128 15:44:26.114" level="INFO">${IsElementVisible} = False</msg>
-<status status="PASS" starttime="20230128 15:44:25.852" endtime="20230128 15:44:26.114"/>
-</kw>
-<if>
-<branch type="IF" condition="${IsElementVisible}">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath:${image_search}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230128 15:44:26.115" endtime="20230128 15:44:26.115"/>
-</kw>
-<status status="NOT RUN" starttime="20230128 15:44:26.114" endtime="20230128 15:44:26.115"/>
-</branch>
-<status status="PASS" starttime="20230128 15:44:26.114" endtime="20230128 15:44:26.116"/>
-</if>
-<status status="PASS" starttime="20230128 15:44:25.851" endtime="20230128 15:44:26.116"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:23.880" endtime="20230128 15:44:26.116"/>
-</iter>
-<iter>
-<var name="${term}">F15 Eagle Jet</var>
-<kw name="Fill the search input" library="steps">
-<arg>${term}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${search_field}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230128 15:44:26.117" endtime="20230128 15:44:26.132"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${search_field}</arg>
-<arg>${term}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230128 15:44:26.133" level="INFO">Typing text 'F15 Eagle Jet' into text field 'xpath://*[@name = 'q']'.</msg>
-<status status="PASS" starttime="20230128 15:44:26.133" endtime="20230128 15:44:26.263"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:26.116" endtime="20230128 15:44:26.264"/>
-</kw>
-<kw name="Submit the search" library="steps">
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${IsElementVisible}</var>
-<arg>Element Should Be Visible</arg>
-<arg>${search_field}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${search_field}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230128 15:44:26.282" level="INFO">Element 'xpath://*[@name = 'q']' is displayed.</msg>
-<status status="PASS" starttime="20230128 15:44:26.265" endtime="20230128 15:44:26.282"/>
-</kw>
-<msg timestamp="20230128 15:44:26.283" level="INFO">${IsElementVisible} = True</msg>
-<status status="PASS" starttime="20230128 15:44:26.265" endtime="20230128 15:44:26.283"/>
-</kw>
-<if>
-<branch type="IF" condition="${IsElementVisible}">
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${search_field}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230128 15:44:26.285" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@name = 'q'] element.</msg>
-<msg timestamp="20230128 15:44:26.571" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230128 15:44:26.571" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230128 15:44:26.284" endtime="20230128 15:44:27.669"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:26.284" endtime="20230128 15:44:27.669"/>
-</branch>
-<status status="PASS" starttime="20230128 15:44:26.284" endtime="20230128 15:44:27.669"/>
-</if>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${search}</var>
-<arg>${filled_search}</arg>
-<arg>attribute=value</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20230128 15:44:27.695" level="INFO">${search} = F15 Eagle Jet</msg>
-<status status="PASS" starttime="20230128 15:44:27.669" endtime="20230128 15:44:27.695"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./Google_Search/${TEST NAME}_${search}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230128 15:44:27.948" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Google_Search/Search%20images%20on%20Google_F15%20Eagle%20Jet.png"&gt;&lt;img src="Google_Search/Search%20images%20on%20Google_F15%20Eagle%20Jet.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230128 15:44:27.695" endtime="20230128 15:44:27.949"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:26.264" endtime="20230128 15:44:27.949"/>
-</kw>
-<kw name="Select image search" library="steps">
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${IsElementVisible}</var>
-<arg>Element Should Be Visible</arg>
-<arg>${image_search}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${image_search}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230128 15:44:28.198" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230128 15:44:28.199" level="FAIL">Element with locator '//*[@id = "hdtb-msb"]/div[1]/div/div[2]/a' not found.</msg>
-<status status="FAIL" starttime="20230128 15:44:27.950" endtime="20230128 15:44:28.200"/>
-</kw>
-<msg timestamp="20230128 15:44:28.200" level="INFO">${IsElementVisible} = False</msg>
-<status status="PASS" starttime="20230128 15:44:27.950" endtime="20230128 15:44:28.202"/>
-</kw>
-<if>
-<branch type="IF" condition="${IsElementVisible}">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath:${image_search}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230128 15:44:28.202" endtime="20230128 15:44:28.202"/>
-</kw>
-<status status="NOT RUN" starttime="20230128 15:44:28.202" endtime="20230128 15:44:28.203"/>
-</branch>
-<status status="PASS" starttime="20230128 15:44:28.202" endtime="20230128 15:44:28.203"/>
-</if>
-<status status="PASS" starttime="20230128 15:44:27.949" endtime="20230128 15:44:28.203"/>
-</kw>
-<status status="PASS" starttime="20230128 15:44:26.116" endtime="20230128 15:44:28.203"/>
-</iter>
-<status status="PASS" starttime="20230128 15:44:18.515" endtime="20230128 15:44:28.203"/>
-</for>
 <kw name="Close Google" library="test_base" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230128 15:44:28.205" endtime="20230128 15:44:31.066"/>
+<status status="PASS" starttime="20230210 13:19:34.331" endtime="20230210 13:19:37.083"/>
 </kw>
-<status status="PASS" starttime="20230128 15:44:28.205" endtime="20230128 15:44:31.066"/>
+<status status="PASS" starttime="20230210 13:19:34.331" endtime="20230210 13:19:37.083"/>
 </kw>
-<status status="PASS" starttime="20230128 15:44:13.845" endtime="20230128 15:44:31.066"/>
+<status status="PASS" starttime="20230210 13:19:26.669" endtime="20230210 13:19:37.083"/>
 </test>
-<doc>Simple Google Image search test using loop to search multiple terms</doc>
-<status status="PASS" starttime="20230128 15:44:13.044" endtime="20230128 15:44:31.069"/>
+<test id="s1-s1-s1-s1-t2" name="Search on Google" line="12">
+<kw name="Open Google" library="test_base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230210 13:19:37.083" level="INFO">Opening browser 'chrome' to base url 'https://google.com'.</msg>
+<status status="PASS" starttime="20230210 13:19:37.083" endtime="20230210 13:19:40.788"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230210 13:19:40.788" endtime="20230210 13:19:40.913"/>
+</kw>
+<status status="PASS" starttime="20230210 13:19:37.083" endtime="20230210 13:19:40.913"/>
+</kw>
+<kw name="Search for a term">
+<arg> Ramen recipe 2022</arg>
+<kw name="Fill the search input" library="steps">
+<arg>${term}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${search_field}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230210 13:19:40.915" endtime="20230210 13:19:40.941"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search_field}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230210 13:19:40.942" level="INFO">Typing text ' Ramen recipe 2022' into text field 'xpath://*[@name = 'q']'.</msg>
+<status status="PASS" starttime="20230210 13:19:40.941" endtime="20230210 13:19:41.058"/>
+</kw>
+<status status="PASS" starttime="20230210 13:19:40.914" endtime="20230210 13:19:41.059"/>
+</kw>
+<kw name="Submit the search" library="steps">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${IsElementVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${search_field}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${search_field}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230210 13:19:41.082" level="INFO">Element 'xpath://*[@name = 'q']' is displayed.</msg>
+<status status="PASS" starttime="20230210 13:19:41.061" endtime="20230210 13:19:41.083"/>
+</kw>
+<msg timestamp="20230210 13:19:41.084" level="INFO">${IsElementVisible} = True</msg>
+<status status="PASS" starttime="20230210 13:19:41.060" endtime="20230210 13:19:41.086"/>
+</kw>
+<if>
+<branch type="IF" condition="${IsElementVisible}">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${search_field}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230210 13:19:41.088" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@name = 'q'] element.</msg>
+<msg timestamp="20230210 13:19:41.390" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20230210 13:19:41.391" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230210 13:19:41.087" endtime="20230210 13:19:44.580"/>
+</kw>
+<status status="PASS" starttime="20230210 13:19:41.086" endtime="20230210 13:19:44.581"/>
+</branch>
+<status status="PASS" starttime="20230210 13:19:41.086" endtime="20230210 13:19:44.581"/>
+</if>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${search}</var>
+<arg>${filled_search}</arg>
+<arg>attribute=value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230210 13:19:44.608" level="INFO">${search} = Ramen recipe 2022</msg>
+<status status="PASS" starttime="20230210 13:19:44.581" endtime="20230210 13:19:44.609"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>./Google_Search/${TEST NAME}_${search}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230210 13:19:44.721" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Google_Search/Search%20on%20Google_Ramen%20recipe%202022.png"&gt;&lt;img src="Google_Search/Search%20on%20Google_Ramen%20recipe%202022.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230210 13:19:44.609" endtime="20230210 13:19:44.721"/>
+</kw>
+<status status="PASS" starttime="20230210 13:19:41.059" endtime="20230210 13:19:44.722"/>
+</kw>
+<status status="PASS" starttime="20230210 13:19:40.914" endtime="20230210 13:19:44.722"/>
+</kw>
+<kw name="Close Google" library="test_base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230210 13:19:44.723" endtime="20230210 13:19:47.583"/>
+</kw>
+<status status="PASS" starttime="20230210 13:19:44.723" endtime="20230210 13:19:47.583"/>
+</kw>
+<status status="PASS" starttime="20230210 13:19:37.083" endtime="20230210 13:19:47.584"/>
+</test>
+<doc>Simple Google search test</doc>
+<status status="PASS" starttime="20230210 13:19:26.349" endtime="20230210 13:19:47.586"/>
 </suite>
-<status status="PASS" starttime="20230128 15:44:13.038" endtime="20230128 15:44:31.072"/>
+<status status="PASS" starttime="20230210 13:19:26.340" endtime="20230210 13:19:47.588"/>
 </suite>
-<status status="PASS" starttime="20230128 15:44:13.029" endtime="20230128 15:44:31.074"/>
+<status status="PASS" starttime="20230210 13:19:26.332" endtime="20230210 13:19:47.591"/>
 </suite>
-<status status="PASS" starttime="20230128 15:44:12.985" endtime="20230128 15:44:31.075"/>
+<status status="PASS" starttime="20230210 13:19:26.293" endtime="20230210 13:19:47.593"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Cadastro Teste">Cadastro Teste</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Google Search">Cadastro Teste.Google Search</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Tests">Cadastro Teste.Google Search.Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Test For Loop">Cadastro Teste.Google Search.Tests.Test For Loop</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Robot Framework Practice">Robot Framework Practice</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Google Search">Robot Framework Practice.Google Search</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Tests">Robot Framework Practice.Google Search.Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s1" name="Test Datadriven">Robot Framework Practice.Google Search.Tests.Test Datadriven</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230128 15:44:13.840" level="ERROR">[ DataDriver ] Error in robot file:
-  File "C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\cadastro_teste (2)\cadastro_teste\Google_Search\Tests\test_for_loop.robot", line 0</msg>
-<msg timestamp="20230128 15:44:13.841" level="ERROR">In source file:
-  File "C:\Users\jfigueredo\Documents\QA\Estudos\UPSKILLING-23\cadastro_teste (2)\cadastro_teste\Google_Search\Tests\../Test_Data/test.csv", line 0</msg>
-<msg timestamp="20230128 15:44:13.844" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: AttributeError: No "Test Template" keyword found for first test case.</msg>
+<msg timestamp="20230210 13:19:37.083" level="WARN">Multiple tests with name 'Search on Google' executed in suite 'Robot Framework Practice.Google Search.Tests.Test Datadriven'.</msg>
 </errors>
 </robot>
