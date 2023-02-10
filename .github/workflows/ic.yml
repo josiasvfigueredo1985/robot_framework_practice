@@ -7,11 +7,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Execute tests
       uses: joonvena/robotframework-docker-action@v1.0
+      with:
+        robot_tests_dir: ./Tests/
     - name: Upload test results
       uses: actions/upload-artifact@v1
       if: always()
       with:
-        robot_tests_dir: ./Tests/
         name: reports
         path: reports
 
