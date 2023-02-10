@@ -7,7 +7,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Execute tests
       uses: joonvena/robotframework-docker-action@v0.1
-      env:
-        BROWSER: chrome
+      with:
         ROBOT_TESTS_DIR: ./Google_Search/Tests
-        ROBOT_REPORTS_DIR: ./reports
+        ROBOT_REPORTS_DIR: ./results
