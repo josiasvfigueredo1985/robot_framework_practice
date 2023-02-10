@@ -19,6 +19,7 @@ jobs:
     - name: Run Edge Robot Tests
       uses: nick-fields/retry@v2.8.3
       with:
+        timeout_seconds: 15
         command: robot -i Edge --output reports/outputEdge.xml .
         new_command_on_retry: sleep 30; robot --rerunfailed "reports/outputEdge.xml" -i Edge --output reports/outputEdge.xml .
 
