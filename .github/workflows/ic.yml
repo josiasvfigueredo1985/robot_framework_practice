@@ -11,7 +11,7 @@ jobs:
       uses: joonvena/robotframework-docker-action@v1.0
       env:
         BROWSER: chrome
-        ROBOT_TESTS_DIR: ./Google_Search/Tests
+        ROBOT_TESTS_DIR: ./Google_Search/Tests/*.robot
         ROBOT_REPORTS_DIR: ./results
     - name: Upload test results
       uses: actions/upload-artifact@v1
