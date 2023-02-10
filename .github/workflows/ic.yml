@@ -1,4 +1,5 @@
 run-tests-chrome:
+on: [push]
   runs-on: ubuntu-latest
   strategy:
     matrix:
