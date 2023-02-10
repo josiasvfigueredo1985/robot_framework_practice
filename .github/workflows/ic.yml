@@ -1,7 +1,7 @@
 name: Robot Framework Practices
 on: [push]
 jobs:
-  run robot framework tests:
+  robot_test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
